@@ -1,0 +1,34 @@
+//mixins are just functions in js but we are here using mixins as functions in sass
+
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap')
+@mixin flex()
+  display: flex
+  justify-content: center
+  align-items: center
+
+
+// These are sass varible  and theses are smae as js we can use this variables in sasss   
+$family: Syne Mono, monospace
+
+// we can extend our css elemts are props in sass by using the @extend word   
+  
+body 
+  // This is the repsesntation of mixins in sass
+  @include flex()
+  background-color: rgb(246, 241, 209)
+  color: black
+  
+
+  h1 
+    font-size: 5em
+    font-family: $family
+    &:hover
+      background: rgb(119, 152, 171)
+  
+  h2 
+    font-size: 2em
+    // See here we inherit the props of h1 tag to h2;
+    @extend h1
+
+  
+
